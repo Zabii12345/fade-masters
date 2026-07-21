@@ -152,7 +152,7 @@
       justify-content: center;
       color: #fff;
       text-align: center;
-      padding-top: 100px; /* more space below navbar */
+      padding-top: 128px; /* more space below navbar */
     }
     .hero-bg {
       position: absolute;
@@ -422,16 +422,13 @@
     @media (max-width: 768px) {
       .services-grid {
         grid-template-columns: repeat(2,1fr);
-        gap: 16px;
       }
     }
     @media (max-width: 480px) {
       .services-grid {
         grid-template-columns: repeat(2,1fr);
-        gap: 10px;
       }
     }
-    /* Card: NO padding around the image, padding only around the text body */
     .service-card {
       background: #fff;
       border: 1px solid var(--border);
@@ -448,24 +445,24 @@
     }
     .service-card .service-img {
       height: 180px;
-      width: 100%;
-      display: block;
+      border-radius: 0;
       object-fit: cover;
+      width: 100%;
       background: #eaeaea;
-      border-radius: 0; /* image sits flush edge-to-edge inside the card */
+      margin: 0;
     }
-    .service-body {
-      padding: 20px 22px 22px;
+    .service-card .service-body {
+      padding: 20px 22px 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
       flex: 1;
     }
-    .service-body h3 {
+    .service-card h3 {
       font-size: 19px;
       font-weight: 600;
     }
-    .service-body p {
+    .service-card p {
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
@@ -483,40 +480,17 @@
     .service-card:hover .service-arrow {
       gap: 11px;
     }
-    /* Smaller cards & images on mobile */
-    @media (max-width: 768px) {
-      .service-card .service-img {
-        height: 140px;
-      }
-      .service-body {
-        padding: 16px 16px 18px;
-        gap: 8px;
-      }
-      .service-body h3 {
-        font-size: 16px;
-      }
-      .service-body p {
-        font-size: 13px;
-      }
+    /* hide extra service cards on home page per breakpoint: desktop=all(10), tablet=9, mobile=5 */
+    @media (max-width: 1100px) {
+      .services-grid .service-card:nth-child(n+10) { display: none; }
     }
-    @media (max-width: 480px) {
-      .service-card .service-img {
-        height: 100px;
-      }
-      .service-body {
-        padding: 12px 12px 14px;
-        gap: 6px;
-      }
-      .service-body h3 {
-        font-size: 14px;
-      }
-      .service-body p {
-        font-size: 11.5px;
-        line-height: 1.45;
-      }
-      .service-arrow {
-        font-size: 11px;
-      }
+    @media (max-width: 768px) {
+      .services-grid .service-card:nth-child(n+6) { display: none; }
+      .service-card .service-img { height: 130px; }
+      .service-card .service-body { padding: 14px 16px 18px; gap: 8px; }
+      .service-card h3 { font-size: 16px; }
+      .service-card p { font-size: 12.5px; line-height: 1.5; }
+      .services-grid { gap: 14px; }
     }
     .view-all-btn {
       display: inline-block;
@@ -676,49 +650,15 @@
       background-size: cover;
       background-position: center;
     }
-    /* Smaller gallery images/cards on mobile & tablet */
-    @media (max-width: 1024px) {
-      .gallery-grid .ph {
-        height: 210px;
-        margin-bottom: 16px;
-      }
+    /* home page gallery preview counts: desktop=12, tablet=8, mobile=6 */
+    .gallery-grid .ph:nth-child(n+13) { display: none; }
+    @media (max-width: 1100px) {
+      .gallery-grid .ph:nth-child(n+9) { display: none; }
     }
     @media (max-width: 768px) {
-      .gallery-grid .ph {
-        height: 170px;
-        margin-bottom: 12px;
-        border-radius: var(--radius-sm);
-      }
-    }
-    @media (max-width: 480px) {
-      .gallery-grid .ph {
-        height: 130px;
-        margin-bottom: 10px;
-      }
-    }
-    /* gallery images from provided list */
-    .gallery-grid .ph:nth-child(1) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmv83K-Nmn-vczGb8arnmJxOnZatFYZAU2aeHQv5Tin0JqZoaX3lkRCSWPNpTD3iiqhjzB86VU4gXYKicVuALXZylQ8JZ3cw98OdcjfWPd-9wi28TTRmqXQD6RsqRmCnmaOQUq7=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(2) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkP8cuNmBWtpnZn1v5fvmw4JLjNKgAQVtV06f_MfJJ92mDsFW9rFRXWF68Nh9qlaJoPm8METWSwMmuHoGvz5AiL9zC8DrZugD2VqWvy4CxlYusXSXx5BBG9QpP-tfvi3M1l2vc=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(3) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkTCWkBrpMvRJeMQeNSRHeXKdynb0bMkhUCNLV1I6x1sJcAFTccSCC8A9L7U-2d3GvZjDSklE71Qppvfv4shH_QRg4VhAnIUPJVQmbr7FWpB2-IhFJ3C9SObnugMJNsp4gacgYsmCe9M9UN=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(4) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmM8IX09a5nHMq3alimtlTos9hOuoQBo9U1sJk3FFqPIoRQKaGnlY21slTDrX5pdwsW3olZ4s-Q8mHWYgeSAnpnhB9kmZ-p4MRSBQ4O4hg61PxZUKsdO30tcH0RMTMLTMGtaJHIhA=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(5) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm1yX-IVjdr_mh9r9zWsBO0N7lACao4VTQDFhN9qjDYTGYcD3UUINEiaYKowJyi6PZouDCduuksVnNoxSZ7r2FaOr6L3kASSIj6hv7Xfa9ekgkU5sl2SzNZsf-uedegnPiAlMbj=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(6) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlErmC3ZV0-yC8m1b-7s4-YGOpO6BUI7srsvjEY5Ziq0MHqjYXMfIFuP4LkIX1SFNdTsL0-zuU6vEBsooxv688Iq3UFLY2rVXzcuO2YdYKU_a9EdX1i7g1JfiemVTOthBapKMsG=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(7) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmbQbNXFhffrhM7gUvc1jQAwfhmiG1LDCxHypG1dLeAqT7VJ9Su0vfZiCKcSK7PfwCVrc-aXYI3zOoTPcpdXO3IFB83tchEx7AtnUwECSkXUgHk8zCnDHfMPm--pjDjtru2DM-w8g=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(8) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkqyToCFhEYzkmxcHx-gTL_1Bywppel1tnoHexnhAW2EI5nnYexOL1snrtT7Fg_Nj-sdS1_H6VlIuvqSeM50R3Ge0UPhkm5tFPxuGjlUd_L97d88JwD6RTZl3hnCeqCmQ_Dq2Kxyw=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(9) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWli8LtzB2SUKiji9wjwah-8OB4I0Q7P-Veh9vSn2MeVBVxX6gpIqFQa1J_R81jLHPBvrwHizVnB282wLE4tkaOlP7FlElSEidV9j4SUlnPUhfQ9Q5ZHlEk9tt8c6BQy2T-GCngXHA=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(10) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWki8Qy779kX4OjYI5nkoHq0bFSj8lfbQJ_TFvKf4EEEYhQ1z5kb8JRiOZp0B3MugAsrS0iCD-HK6uurFvfh6WHf2dSbfEYeBHFA7b7ofxgKer9fT5e3uId3EOichbC3WhNyQcstRQ=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(11) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn7xK3W5ucXJUyBWYhhGpuCbxIKUxnxtzOA_Pt51iQSmOUaaspD3I20R1bc5aIJfZJhbgrr2yuXIHOTROy3V1tm1zC15FHg3-CIrkTriLjhTOLlGn240fk4gKiMGnRPyPetfhA=s1360-w1360-h1020-rw'); }
-    .gallery-grid .ph:nth-child(12) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkmuwnFGAgOLveaVIBwh4omHeX6DrGdkGSDJE2e2TpO8rSX4m_VKQmoym4r990T69xY-9YaoxYNMIOh93LLzUl1BMMEgUGmWSGmGqY27jxCRdASUPTc44mQCFXs-Nc0Y5hA6NA1=s1360-w1360-h1020-rw'); }
-
-    /* Homepage preview only: 6 photos on mobile, 9 on tablet, 12 on desktop.
-       (The dedicated Gallery page shows all 12 on every device — see gallery.html) */
-    .gallery-grid .ph:nth-child(n+7) { display: none; }
-    @media (min-width: 769px) {
-      .gallery-grid .ph:nth-child(n+7) { display: block; }
-      .gallery-grid .ph:nth-child(n+10) { display: none; }
-    }
-    @media (min-width: 1025px) {
-      .gallery-grid .ph:nth-child(n+10) { display: block; }
+      .gallery-grid .ph:nth-child(n+7) { display: none; }
+      .gallery-grid .ph { height: 170px; margin-bottom: 14px; }
+      .gallery-grid { columns: 2 150px; column-gap: 14px; }
     }
 
     /* ----- reviews ----- */
@@ -930,7 +870,7 @@
     <img class="logo-img" src="https://i.ibb.co/mC5dZPdm/37cc08d5-7337-4629-989f-9685397c816b.png" alt="Fade Masters Logo" />
     <span style="font-weight:600; font-size:14px; letter-spacing:0.5px; color:var(--dark);">Fade Masters</span>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#about">About</a></li>
@@ -985,89 +925,19 @@
       <p>Every service built around precision, consistency, and a genuinely relaxed experience.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" />
-        <div class="service-body">
-          <h3>Skin Fade</h3>
-          <p>Razor-sharp fades with seamless, professional blending.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" />
-        <div class="service-body">
-          <h3>Buzz Cut</h3>
-          <p>Classic, clean, and low-maintenance — sharp as ever.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" />
-        <div class="service-body">
-          <h3>Hair Coloring</h3>
-          <p>Premium colour services for a fresh, modern look.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" />
-        <div class="service-body">
-          <h3>Hair Shape Up</h3>
-          <p>Precision edge-ups and shape-ups for sharp definition.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" />
-        <div class="service-body">
-          <h3>Head Shave</h3>
-          <p>Expert wet shave for a perfectly smooth, clean finish.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" />
-        <div class="service-body">
-          <h3>Scissor Cut</h3>
-          <p>Textured, layered cuts with expert scissor work.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" />
-        <div class="service-body">
-          <h3>Waxing</h3>
-          <p>Professional waxing services for a polished look.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" />
-        <div class="service-body">
-          <h3>Hair Cuts</h3>
-          <p>Everything from classic to contemporary — cut with care.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" />
-        <div class="service-body">
-          <h3>Beard Trim</h3>
-          <p>Luxury beard sculpting, trimming and hot towel finish.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" />
-        <div class="service-body">
-          <h3>Shaves</h3>
-          <p>Classic hot towel shaves for the ultimate refresh.</p>
-          <span class="service-arrow">Learn more →</span>
-        </div>
-      </div>
+      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><div class="service-body"><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><div class="service-body"><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><div class="service-body"><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><div class="service-body"><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><div class="service-body"><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><div class="service-body"><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><div class="service-body"><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><div class="service-body"><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><div class="service-body"><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><div class="service-body"><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div></div>
     </div>
     <div class="view-all-wrap">
-      <a href="services.html" target="_blank" rel="noopener" class="view-all-btn">View All Services</a>
+      <a href="services.html" class="view-all-btn" target="_blank">View All Services</a>
     </div>
   </div>
 </section>
@@ -1111,10 +981,28 @@
       <h2>Gallery</h2>
     </div>
     <div class="gallery-grid">
-      <div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmv83K-Nmn-vczGb8arnmJxOnZatFYZAU2aeHQv5Tin0JqZoaX3lkRCSWPNpTD3iiqhjzB86VU4gXYKicVuALXZylQ8JZ3cw98OdcjfWPd-9wi28TTRmqXQD6RsqRmCnmaOQUq7=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkP8cuNmBWtpnZn1v5fvmw4JLjNKgAQVtV06f_MfJJ92mDsFW9rFRXWF68Nh9qlaJoPm8METWSwMmuHoGvz5AiL9zC8DrZugD2VqWvy4CxlYusXSXx5BBG9QpP-tfvi3M1l2vc=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkTCWkBrpMvRJeMQeNSRHeXKdynb0bMkhUCNLV1I6x1sJcAFTccSCC8A9L7U-2d3GvZjDSklE71Qppvfv4shH_QRg4VhAnIUPJVQmbr7FWpB2-IhFJ3C9SObnugMJNsp4gacgYsmCe9M9UN=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmM8IX09a5nHMq3alimtlTos9hOuoQBo9U1sJk3FFqPIoRQKaGnlY21slTDrX5pdwsW3olZ4s-Q8mHWYgeSAnpnhB9kmZ-p4MRSBQ4O4hg61PxZUKsdO30tcH0RMTMLTMGtaJHIhA=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm1yX-IVjdr_mh9r9zWsBO0N7lACao4VTQDFhN9qjDYTGYcD3UUINEiaYKowJyi6PZouDCduuksVnNoxSZ7r2FaOr6L3kASSIj6hv7Xfa9ekgkU5sl2SzNZsf-uedegnPiAlMbj=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlErmC3ZV0-yC8m1b-7s4-YGOpO6BUI7srsvjEY5Ziq0MHqjYXMfIFuP4LkIX1SFNdTsL0-zuU6vEBsooxv688Iq3UFLY2rVXzcuO2YdYKU_a9EdX1i7g1JfiemVTOthBapKMsG=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmbQbNXFhffrhM7gUvc1jQAwfhmiG1LDCxHypG1dLeAqT7VJ9Su0vfZiCKcSK7PfwCVrc-aXYI3zOoTPcpdXO3IFB83tchEx7AtnUwECSkXUgHk8zCnDHfMPm--pjDjtru2DM-w8g=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkqyToCFhEYzkmxcHx-gTL_1Bywppel1tnoHexnhAW2EI5nnYexOL1snrtT7Fg_Nj-sdS1_H6VlIuvqSeM50R3Ge0UPhkm5tFPxuGjlUd_L97d88JwD6RTZl3hnCeqCmQ_Dq2Kxyw=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWli8LtzB2SUKiji9wjwah-8OB4I0Q7P-Veh9vSn2MeVBVxX6gpIqFQa1J_R81jLHPBvrwHizVnB282wLE4tkaOlP7FlElSEidV9j4SUlnPUhfQ9Q5ZHlEk9tt8c6BQy2T-GCngXHA=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWki8Qy779kX4OjYI5nkoHq0bFSj8lfbQJ_TFvKf4EEEYhQ1z5kb8JRiOZp0B3MugAsrS0iCD-HK6uurFvfh6WHf2dSbfEYeBHFA7b7ofxgKer9fT5e3uId3EOichbC3WhNyQcstRQ=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn7xK3W5ucXJUyBWYhhGpuCbxIKUxnxtzOA_Pt51iQSmOUaaspD3I20R1bc5aIJfZJhbgrr2yuXIHOTROy3V1tm1zC15FHg3-CIrkTriLjhTOLlGn240fk4gKiMGnRPyPetfhA=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkmuwnFGAgOLveaVIBwh4omHeX6DrGdkGSDJE2e2TpO8rSX4m_VKQmoym4r990T69xY-9YaoxYNMIOh93LLzUl1BMMEgUGmWSGmGqY27jxCRdASUPTc44mQCFXs-Nc0Y5hA6NA1=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnUyImx_5JvJGviBl6yP4RoqSHl81UHnHWeUao4ACfzmy0usdv4kDP69FKVzRRwkeRyULzGcXD59gbLpKqmZx7gcGFiHikzp37eQLx1oa9QwdDiPn8iXGWRAlGR1-fyEqq4Vln4aQ=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmHg8q7Fe6fa4wQltInnXmoC62KcT4BHkzKIri2l8Mq5RIULtW0Tbj7bRxRGGAZzd3NuksZtk_kCkX6XZuRyWQvmZ3arVkK76r5BTs-WRim_9qZ-bVdq7jlpn-D-u6OeLCADzXX=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmBP-15zMAuqvMEijaFokkKN1rO9UJWfzY4HofXQvlIbEB2-ISWwFwL1hrXBuxTYGRZcbNaDa2NA_3IWhpMsOKAAY75eqVqdOUP0i0onWRGVEpCpFow0P9EsZ5WoFKPtA7UQlBxkQ=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkX4jNARMV886FYhPjFLpPJgNvXvsCCz1abOvaSBfoGnSDyTgFp4j1PltLwactYZmRPixh_ILGipfyIFxXzpQ01YpPl2l5GwFDX9txy04vpU-biOh8TLnCxmepjWAM6ksgFy9d-gg=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlII6xveyTA6rkOzpJv96aP-FFK3-80AMt5_a_-z5_iGHc2qSVSJ4R19xf0eZ1bGMVXQtG6BybKron5fVVJfh3Sx_vn7wGfMVZyMD9Awp8jDEQErLtb3hRMrYfnFyigE8xT_a8l1g=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkCA3R7ZmIF_g7VEOrelA3exHrB1fwLxhtS5G2vMkkfIJjFnI5STmmFWaMKtq2WiAqKPFk1p_vVDHbVdYrM67RNtp1ynjmrPFfMtpYGCbgcAuKUZGnQGvhrF-CQqDutGatF1zgX=s1360-w1360-h1020-rw');"></div>
+      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkBpFNk4MoWu1fa2WpCvLUgbat8MkNb7bMdo45zvrxlaxrJieRnszzlNk2gNTivImsTKUXLAqW5Jugp8qpAqHRZzxRivCyy2poqS4Wg1_VBSYXMHW-kl1TAyPJ094P8NLChdq73=s1360-w1360-h1020-rw');"></div>
     </div>
     <div class="view-all-wrap">
-      <a href="gallery.html" target="_blank" rel="noopener" class="view-all-btn">View All Photos</a>
+      <a href="gallery.html" class="view-all-btn" target="_blank">View All Photos</a>
     </div>
   </div>
 </section>
@@ -1129,18 +1017,18 @@
     <div class="review-grid">
       <div class="review-card">
         <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Zawar" /><div><div class="review-name">Zawar Khan</div><div class="review-role">Regular Client</div></div></div>
-        <p>"Best barber shop in Bradford. I've been coming here regularly since they opened. The team always makes you feel welcome and consistently delivers exceptional results."</p>
         <div class="review-stars">★★★★★</div>
+        <p>"Best barber shop in Bradford. I've been coming here regularly since they opened. The team always makes you feel welcome and consistently delivers exceptional results."</p>
       </div>
       <div class="review-card">
         <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Aftab" /><div><div class="review-name">Aftab Hussain</div><div class="review-role">First Visit</div></div></div>
-        <p>"Outstanding fades and beard grooming. Professional team with experience across different hair types. Highly recommended."</p>
         <div class="review-stars">★★★★★</div>
+        <p>"Outstanding fades and beard grooming. Professional team with experience across different hair types. Highly recommended."</p>
       </div>
       <div class="review-card">
         <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Osman" /><div><div class="review-name">Osman Talib</div><div class="review-role">Regular Client</div></div></div>
-        <p>"Excellent service from Raja. One of the best fades I've ever had. Worth travelling for."</p>
         <div class="review-stars">★★★★★</div>
+        <p>"Excellent service from Raja. One of the best fades I've ever had. Worth travelling for."</p>
       </div>
     </div>
     <div class="carousel-dots"><span class="on"></span><span></span><span></span></div>
@@ -1167,7 +1055,7 @@
       </div>
       <div>
         <h5>Navigate</h5>
-        <ul><li><a href="index.html">Home</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#about">About</a></li><li><a href="#visit">Visit Us</a></li></ul>
+        <ul><li><a href="#">Home</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#about">About</a></li><li><a href="#visit">Visit Us</a></li></ul>
       </div>
       <div>
         <h5>Hours</h5>
