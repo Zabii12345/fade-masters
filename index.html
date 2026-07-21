@@ -422,22 +422,24 @@
     @media (max-width: 768px) {
       .services-grid {
         grid-template-columns: repeat(2,1fr);
+        gap: 16px;
       }
     }
     @media (max-width: 480px) {
       .services-grid {
         grid-template-columns: repeat(2,1fr);
+        gap: 12px;
       }
     }
     .service-card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 24px;
+      padding: 0; /* no padding on card, image gets full width */
       display: flex;
       flex-direction: column;
-      gap: 16px;
       transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
+      overflow: hidden;
     }
     .service-card:hover {
       transform: translateY(-8px);
@@ -445,19 +447,48 @@
     }
     .service-card .service-img {
       height: 180px;
-      border-radius: var(--radius-md);
       object-fit: cover;
       width: 100%;
       background: #eaeaea;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      .service-card .service-img {
+        height: 130px;
+      }
+    }
+    .service-card .service-text {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 12px;
+    }
+    @media (max-width: 480px) {
+      .service-card .service-text {
+        padding: 16px;
+        gap: 8px;
+      }
     }
     .service-card h3 {
       font-size: 19px;
       font-weight: 600;
     }
+    @media (max-width: 480px) {
+      .service-card h3 {
+        font-size: 16px;
+      }
+    }
     .service-card p {
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
+    }
+    @media (max-width: 480px) {
+      .service-card p {
+        font-size: 13px;
+      }
     }
     .service-arrow {
       font-size: 13px;
@@ -607,11 +638,19 @@
     @media (max-width: 1024px) {
       .gallery-grid {
         columns: 3 180px;
+        column-gap: 16px;
       }
     }
     @media (max-width: 768px) {
       .gallery-grid {
-        columns: 2 160px;
+        columns: 2 140px;
+        column-gap: 12px;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid {
+        columns: 2 120px;
+        column-gap: 10px;
       }
     }
     .gallery-grid .ph {
@@ -622,6 +661,11 @@
       transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
       background: #eaeaea;
     }
+    @media (max-width: 480px) {
+      .gallery-grid .ph {
+        margin-bottom: 12px;
+      }
+    }
     .gallery-grid .ph:hover {
       transform: scale(1.02);
     }
@@ -630,7 +674,12 @@
       background-size: cover;
       background-position: center;
     }
-    /* gallery images from provided list */
+    @media (max-width: 480px) {
+      .gallery-grid .ph {
+        height: 160px;
+      }
+    }
+    /* gallery images from provided list — 12 total */
     .gallery-grid .ph:nth-child(1) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmv83K-Nmn-vczGb8arnmJxOnZatFYZAU2aeHQv5Tin0JqZoaX3lkRCSWPNpTD3iiqhjzB86VU4gXYKicVuALXZylQ8JZ3cw98OdcjfWPd-9wi28TTRmqXQD6RsqRmCnmaOQUq7=s1360-w1360-h1020-rw'); }
     .gallery-grid .ph:nth-child(2) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkP8cuNmBWtpnZn1v5fvmw4JLjNKgAQVtV06f_MfJJ92mDsFW9rFRXWF68Nh9qlaJoPm8METWSwMmuHoGvz5AiL9zC8DrZugD2VqWvy4CxlYusXSXx5BBG9QpP-tfvi3M1l2vc=s1360-w1360-h1020-rw'); }
     .gallery-grid .ph:nth-child(3) { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkTCWkBrpMvRJeMQeNSRHeXKdynb0bMkhUCNLV1I6x1sJcAFTccSCC8A9L7U-2d3GvZjDSklE71Qppvfv4shH_QRg4VhAnIUPJVQmbr7FWpB2-IhFJ3C9SObnugMJNsp4gacgYsmCe9M9UN=s1360-w1360-h1020-rw'); }
@@ -908,16 +957,16 @@
       <p>Every service built around precision, consistency, and a genuinely relaxed experience.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><div class="service-text"><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><div class="service-text"><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><div class="service-text"><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><div class="service-text"><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><div class="service-text"><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><div class="service-text"><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><div class="service-text"><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><div class="service-text"><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><div class="service-text"><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><div class="service-text"><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div></div>
     </div>
     <div class="view-all-wrap">
       <a href="#services" class="view-all-btn">View All Services</a>
