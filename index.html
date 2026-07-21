@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>Clayton Trimz | Premium Barbershop in Bradford</title>
-  <meta name="description" content="Visit Clayton Trimz in Bradford for expert fades, beard grooming, and professional barbering. Rated 5.0 stars. Located at Paradise Shopping Centre, 175 Pasture Ln." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+  <title>Orient Style | Premium Hair Salon Berlin Moabit</title>
+  <meta name="description" content="Orient Style – Ihr Friseur in Berlin Moabit. Premium Haarschnitte, Bartpflege, Färben & mehr. Walk-in willkommen. Jetzt Termin vereinbaren!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="https://i.ibb.co/WN5gNFXy/28957ba7-fb34-4753-8411-7ab4354e51a6.png" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <style>
     * {
       margin: 0;
@@ -16,24 +16,22 @@
     }
     :root {
       --bg: #FFFFFF;
-      --bg-secondary: #F8F8F8;
-      --text-primary: #121212;
-      --text-secondary: #5F5F5F;
-      --accent: #C9A227;
-      --dark: #121212;
-      --border: #ECECEC;
-      --radius-sm: 12px;
+      --bg-secondary: #FAF8F5;
+      --text-primary: #1A1A1A;
+      --text-secondary: #4A4A4A;
+      --accent: #B8860B;
+      --accent-light: #D4AF37;
+      --dark: #1A1A1A;
+      --border: #E8E2D9;
+      --radius-sm: 10px;
       --radius-md: 20px;
       --radius-lg: 32px;
       --radius-pill: 999px;
       --max: 1280px;
-      --shadow-card: 0 20px 40px -12px rgba(0,0,0,0.08);
-      --shadow-hover: 0 30px 60px -20px rgba(0,0,0,0.14);
+      --shadow-card: 0 16px 40px -12px rgba(0,0,0,0.06);
+      --shadow-hover: 0 28px 56px -20px rgba(0,0,0,0.12);
     }
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg);
@@ -41,29 +39,15 @@
       overflow-x: hidden;
       line-height: 1.5;
     }
-    img, svg {
-      display: block;
-      max-width: 100%;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-    @media (max-width: 900px) {
-      .wrap {
-        padding: 0 24px;
-      }
-    }
+    img, svg { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } }
 
     /* ----- nav ----- */
     .nav-shell {
       position: fixed;
-      top: 24px;
+      top: 20px;
       left: 0;
       right: 0;
       display: flex;
@@ -74,46 +58,37 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 44px;
-      background: rgba(255,255,255,0.80);
+      gap: 32px;
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(16px) saturate(160%);
       -webkit-backdrop-filter: blur(16px) saturate(160%);
       border: 1px solid rgba(255,255,255,0.5);
       border-radius: var(--radius-pill);
-      padding: 12px 14px 12px 28px;
-      box-shadow: 0 20px 50px -12px rgba(0,0,0,0.18);
+      padding: 10px 14px 10px 24px;
+      box-shadow: 0 20px 50px -12px rgba(0,0,0,0.10);
       transition: padding 0.3s, gap 0.3s;
     }
-    nav.shrink {
-      padding: 8px 10px 8px 22px;
-      gap: 32px;
-    }
-    .logo-img {
-      height: 50px;
-      width: auto;
-      display: block;
-    }
+    nav.shrink { padding: 6px 10px 6px 18px; gap: 24px; }
+    .logo-img { height: 44px; width: auto; display: block; }
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 26px;
       list-style: none;
+      align-items: center;
     }
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
     }
     .nav-links a {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 500;
       color: var(--text-secondary);
       position: relative;
       padding-bottom: 4px;
       transition: color 0.2s;
+      white-space: nowrap;
     }
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
+    .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active {
       color: var(--text-primary);
       font-weight: 600;
@@ -133,63 +108,57 @@
       color: #fff;
       font-size: 13px;
       font-weight: 600;
-      padding: 10px 24px;
+      padding: 10px 22px;
       border-radius: var(--radius-pill);
       transition: transform 0.25s, background 0.25s;
       white-space: nowrap;
     }
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      background: #000;
+    .nav-cta:hover { transform: translateY(-1px); background: #000; }
+    .lang-toggle {
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
     }
+    .lang-toggle span { cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+    .lang-toggle .active-lang { background: var(--accent); color: #fff; }
 
-    /* ----- hero (right-aligned text) ----- */
+    /* ----- hero ----- */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
       color: #fff;
-      text-align: right;
-      padding-top: 180px;
+      text-align: left;
+      padding-top: 160px;
     }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('https://i.ibb.co/hFr8pr21/Chat-GPT-Image-Jun-16-2026-01-21-21-PM.png') center center / cover no-repeat;
-      border-radius: 0;
+      background: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnXgC8iUui5NCNtip--O0S4UzlPmGBwEJymoEYN3eIwqDaEKE2L7M6WWNRCpIrXCu34qQyplLEHMPMIjx7330LpVb6k7TUZcXkZEEzeaeuIcwUzot3Cwf0kYVDmozvtF0RAwaGl60Eh7qHK=s1360-w1360-h1020-rw') center center / cover no-repeat;
       z-index: 0;
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.8) 100%);
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%);
       z-index: 1;
     }
     .hero-inner {
       position: relative;
       z-index: 2;
-      max-width: 680px;
+      max-width: 640px;
       padding: 0 60px 0 40px;
-      margin-left: auto;
-      margin-right: 40px;
-      margin-top: 60px;
+      margin-left: 40px;
+      margin-top: 40px;
     }
     @media (max-width: 900px) {
-      .hero {
-        justify-content: center;
-        text-align: center;
-        padding-top: 160px;
-      }
-      .hero-inner {
-        max-width: 100%;
-        padding: 0 24px;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 40px;
-      }
+      .hero { justify-content: center; text-align: center; padding-top: 140px; }
+      .hero-inner { max-width: 100%; padding: 0 24px; margin: 0 auto; text-align: center; }
     }
     .eyebrow {
       display: inline-flex;
@@ -199,50 +168,38 @@
       border: 1px solid rgba(255,255,255,0.18);
       padding: 8px 20px;
       border-radius: var(--radius-pill);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 1.6px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       text-transform: uppercase;
     }
     .hero h1 {
-      font-size: clamp(28px, 3.8vw, 46px);
+      font-size: clamp(28px, 4.2vw, 52px);
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: -1.2px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: normal; color: var(--accent-light); }
     .hero p {
-      font-size: 18px;
+      font-size: 17px;
       color: rgba(255,255,255,0.8);
       line-height: 1.6;
-      max-width: 560px;
-      margin: 0 0 40px auto;
+      max-width: 480px;
+      margin: 0 0 36px 0;
     }
-    @media (max-width: 900px) {
-      .hero p {
-        margin: 0 auto 40px;
-      }
-    }
+    @media (max-width: 900px) { .hero p { margin: 0 auto 36px; } }
     .btn-row {
       display: flex;
-      gap: 16px;
-      justify-content: flex-end;
+      gap: 14px;
       flex-wrap: wrap;
     }
-    @media (max-width: 900px) {
-      .btn-row {
-        justify-content: center;
-      }
-    }
+    @media (max-width: 900px) { .btn-row { justify-content: center; } }
     .btn {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      padding: 16px 32px;
+      padding: 14px 28px;
       border-radius: var(--radius-md);
       transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
       display: inline-flex;
@@ -256,76 +213,27 @@
       color: var(--text-primary);
       box-shadow: 0 14px 32px -10px rgba(0,0,0,0.4);
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px -8px rgba(0,0,0,0.5);
-    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -8px rgba(0,0,0,0.5); }
     .btn-outline {
       border: 1px solid rgba(255,255,255,0.4);
       color: #fff;
       background: transparent;
     }
-    .btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-2px);
-    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
     .btn-gold {
-      background: var(--accent);
-      color: #171308;
-      box-shadow: 0 12px 30px -8px rgba(201,162,39,0.4);
+      background: var(--accent-light);
+      color: #1A1A1A;
+      box-shadow: 0 12px 30px -8px rgba(184,134,11,0.4);
     }
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 34px -8px rgba(201,162,39,0.55);
-    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -8px rgba(184,134,11,0.55); }
     .btn-dark {
       background: var(--dark);
       color: #fff;
     }
-    .btn-dark:hover {
-      background: #000;
-      transform: translateY(-2px);
-    }
-    .scroll-cue {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      font-size: 10.5px;
-      letter-spacing: 2.5px;
-      color: rgba(255,255,255,0.6);
-    }
-    .scroll-cue .line {
-      width: 1px;
-      height: 36px;
-      background: rgba(255,255,255,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .scroll-cue .line::after {
-      content: "";
-      position: absolute;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--accent);
-      animation: scrollpulse 2.4s ease-in-out infinite;
-    }
-    @keyframes scrollpulse {
-      0% { top: -100%; }
-      60% { top: 100%; }
-      100% { top: 100%; }
-    }
+    .btn-dark:hover { background: #000; transform: translateY(-2px); }
     .rating-float {
       position: absolute;
-      left: 5%;
+      right: 5%;
       bottom: 56px;
       z-index: 2;
       display: flex;
@@ -333,437 +241,259 @@
       gap: 14px;
       background: rgba(255,255,255,0.95);
       color: var(--text-primary);
-      padding: 14px 22px;
+      padding: 12px 20px;
       border-radius: var(--radius-md);
       box-shadow: 0 20px 50px -14px rgba(0,0,0,0.35);
     }
-    @media (max-width: 900px) {
-      .rating-float {
-        display: none;
-      }
-    }
-    .rating-score {
-      font-size: 24px;
-      font-weight: 700;
-      color: #121212;
-    }
-    .rating-stars {
-      color: #FFD700;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-    .rating-sub {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
+    @media (max-width: 900px) { .rating-float { display: none; } }
+    .rating-score { font-size: 22px; font-weight: 700; color: #121212; }
+    .rating-stars { color: #FFD700; font-size: 12px; letter-spacing: 1px; }
+    .rating-sub { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
 
     /* ----- sections ----- */
-    section {
-      padding: 100px 0;
-    }
-    @media (max-width: 900px) {
-      section {
-        padding: 72px 0;
-      }
-    }
+    section { padding: 90px 0; }
+    @media (max-width: 900px) { section { padding: 60px 0; } }
     .section-head {
       max-width: 640px;
-      margin: 0 auto 56px;
+      margin: 0 auto 48px;
       text-align: center;
     }
     .section-head .eyebrow-line {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 2px;
       color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
     .section-head h2 {
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(28px, 3.8vw, 42px);
       font-weight: 700;
       letter-spacing: -1px;
       line-height: 1.15;
     }
     .section-head p {
       color: var(--text-secondary);
-      font-size: 16px;
-      margin-top: 16px;
+      font-size: 15px;
+      margin-top: 14px;
       line-height: 1.65;
     }
 
-    /* ----- stats / trust bar ----- */
+    /* stats */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4,1fr);
       gap: 20px;
     }
-    @media (max-width: 900px) {
-      .stats-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
+    @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
     .stat-card {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 32px 24px;
+      padding: 28px 20px;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .stat-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      background: #fff;
-    }
-    .stat-num {
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-    .stat-num .accent {
-      color: var(--accent);
-    }
-    .stat-label {
-      font-size: 13.5px;
-      color: var(--text-secondary);
-      margin-top: 8px;
-      font-weight: 500;
-    }
+    .stat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); background: #fff; }
+    .stat-num { font-size: 32px; font-weight: 700; letter-spacing: -1px; }
+    .stat-num .accent { color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--text-secondary); margin-top: 6px; font-weight: 500; }
 
-    /* ----- services ----- */
-    .services {
-      background: var(--bg-secondary);
+    /* services tabs */
+    .services { background: var(--bg-secondary); }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
     }
+    .tab-btn {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 10px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    .tab-btn.active-tab {
+      background: var(--accent-light);
+      color: #1A1A1A;
+      border-color: var(--accent-light);
+    }
+    .tab-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(4,1fr);
-      gap: 24px;
+      gap: 20px;
     }
-    @media (max-width: 1100px) {
-      .services-grid {
-        grid-template-columns: repeat(3,1fr);
-      }
-    }
-    @media (max-width: 768px) {
-      .services-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-    @media (max-width: 480px) {
-      .services-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
+    @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: repeat(2,1fr); gap: 14px; } }
     .service-card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 0;
-      overflow: hidden;
+      border-radius: var(--radius-md);
+      padding: 20px 18px 22px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-    }
-    .service-card .service-img {
-      height: 180px;
-      border-radius: 0;
-      object-fit: cover;
-      width: 100%;
-      background: #eaeaea;
-      margin: 0;
-    }
-    .service-card .service-body {
-      padding: 20px 22px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1;
-    }
-    .service-card h3 {
-      font-size: 19px;
-      font-weight: 600;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .service-arrow {
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .service-card .service-icon { font-size: 26px; margin-bottom: 8px; }
+    .service-card h3 { font-size: 17px; font-weight: 600; }
+    .service-card .price { font-size: 14px; color: var(--accent); font-weight: 700; margin: 4px 0 10px; }
+    .service-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; flex: 1; }
+    .service-card .book-link {
+      margin-top: 14px;
       font-size: 13px;
       font-weight: 600;
       color: var(--accent);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-top: auto;
+      gap: 4px;
       transition: gap 0.25s;
     }
-    .service-card:hover .service-arrow {
-      gap: 11px;
-    }
-    @media (max-width: 1100px) {
-      .services-grid .service-card:nth-child(n+10) { display: none; }
-    }
-    @media (max-width: 768px) {
-      .services-grid .service-card:nth-child(n+6) { display: none; }
-      .service-card .service-img { height: 130px; }
-      .service-card .service-body { padding: 14px 16px 18px; gap: 8px; }
-      .service-card h3 { font-size: 16px; }
-      .service-card p { font-size: 12.5px; line-height: 1.5; }
-      .services-grid { gap: 14px; }
-    }
+    .service-card:hover .book-link { gap: 10px; }
+
+    .service-card.hidden-service { display: none; }
+
+    .view-all-wrap { text-align: center; margin-top: 40px; }
     .view-all-btn {
       display: inline-block;
-      margin-top: 40px;
       padding: 14px 32px;
       background: var(--dark);
       color: #fff;
       border-radius: var(--radius-pill);
       font-weight: 600;
       transition: background 0.2s, transform 0.2s;
-      text-align: center;
     }
-    .view-all-btn:hover {
-      background: #000;
-      transform: translateY(-2px);
-    }
+    .view-all-btn:hover { background: #000; transform: translateY(-2px); }
 
-    /* ----- why / feature ----- */
-    .why {
+    /* why */
+    .why-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       align-items: center;
     }
-    @media (max-width: 900px) {
-      .why {
-        grid-template-columns: 1fr;
-        gap: 44px;
-      }
-    }
-    .why .ph {
-      height: 480px;
+    @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .why-img {
+      height: 420px;
       border-radius: var(--radius-lg);
       background: #eaeaea;
-      background-image: url('https://i.ibb.co/FdqstTk/129dd1b9-8aea-430c-839e-05c21231dcb2.png');
+      background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnXgC8iUui5NCNtip--O0S4UzlPmGBwEJymoEYN3eIwqDaEKE2L7M6WWNRCpIrXCu34qQyplLEHMPMIjx7330LpVb6k7TUZcXkZEEzeaeuIcwUzot3Cwf0kYVDmozvtF0RAwaGl60Eh7qHK=s1360-w1360-h1020-rw');
       background-size: cover;
       background-position: center;
     }
-    .why-eyebrow {
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-    .why h2 {
-      font-size: clamp(28px,3.6vw,38px);
-      font-weight: 700;
-      letter-spacing: -1px;
-      line-height: 1.2;
-      margin-bottom: 32px;
-    }
-    .why-feature {
-      display: flex;
-      gap: 18px;
-      margin-bottom: 26px;
-    }
+    .why-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--accent); margin-bottom: 14px; text-transform: uppercase; }
+    .why h2 { font-size: clamp(26px,3.4vw,36px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin-bottom: 28px; }
+    .why-feature { display: flex; gap: 16px; margin-bottom: 22px; }
     .why-feature .icon {
-      width: 46px;
-      height: 46px;
-      flex-shrink: 0;
-      border-radius: 14px;
-      background: rgba(201,162,39,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 15px;
+      width: 44px; height: 44px; flex-shrink: 0;
+      border-radius: 12px; background: rgba(184,134,11,0.10);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-weight: 700; font-size: 14px;
     }
-    .why-feature h4 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .why-feature p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
+    .why-feature h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .why-feature p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
 
-    /* ----- about (white bg, text left, image right) ----- */
-    .about-white {
-      background: var(--bg);
-      color: var(--text-primary);
-    }
-    .about-white .about-grid {
+    /* about */
+    .about-white { background: var(--bg); }
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       align-items: center;
     }
-    @media (max-width: 900px) {
-      .about-white .about-grid {
-        grid-template-columns: 1fr;
-        gap: 44px;
-      }
-    }
-    .about-white .about-img {
-      height: 480px;
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+    .about-img {
+      height: 420px;
       border-radius: var(--radius-lg);
       background: #eaeaea;
-      background-image: url('https://i.ibb.co/N6Qpm72f/ba19a348-0ff7-4c20-acab-a11d8a41513e.png');
+      background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkXzstdEXUeYi9-2g8G-hNfOxBunYfLhm2HRHOh0hbEgdp-0j4mo7gzB1I87paokzwRQ0TKRH0ab0-GyYaRwQ_JwjaGoDzaERGM_jYeiK3XdImmJqINeV7FFNPwrPyS0hOUMZLQiwxd2Kqg=s1360-w1360-h1020-rw');
       background-size: cover;
       background-position: center;
     }
-    .about-white .eyebrow-line {
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-    .about-white h2 {
-      font-size: clamp(28px,3.6vw,38px);
-      font-weight: 700;
-      letter-spacing: -1px;
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-    .about-white p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
+    .about-white .eyebrow-line { font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--accent); margin-bottom: 14px; text-transform: uppercase; }
+    .about-white h2 { font-size: clamp(26px,3.4vw,36px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin-bottom: 20px; }
+    .about-white p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 
-    /* ----- gallery masonry ----- */
+    /* gallery */
     .gallery-grid {
-      columns: 4 220px;
-      column-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
     }
-    @media (max-width: 1024px) {
-      .gallery-grid {
-        columns: 3 180px;
-      }
-    }
-    @media (max-width: 768px) {
-      .gallery-grid {
-        columns: 2 160px;
-      }
-    }
+    @media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2,1fr); gap: 12px; } }
     .gallery-grid .ph {
       width: 100%;
-      margin-bottom: 20px;
-      border-radius: var(--radius-md);
-      break-inside: avoid;
-      transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+      height: 200px;
+      border-radius: var(--radius-sm);
       background: #eaeaea;
-    }
-    .gallery-grid .ph:hover {
-      transform: scale(1.02);
-    }
-    .gallery-grid .ph {
-      height: 260px;
       background-size: cover;
       background-position: center;
+      transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
     }
-    .gallery-grid .ph:nth-child(n+13) { display: none; }
-    @media (max-width: 1100px) {
-      .gallery-grid .ph:nth-child(n+9) { display: none; }
-    }
-    @media (max-width: 768px) {
-      .gallery-grid .ph:nth-child(n+7) { display: none; }
-      .gallery-grid .ph { height: 170px; margin-bottom: 14px; }
-      .gallery-grid { columns: 2 150px; column-gap: 14px; }
-    }
+    .gallery-grid .ph:hover { transform: scale(1.03); }
+    @media (max-width: 768px) { .gallery-grid .ph { height: 140px; } }
 
-    /* ----- reviews ----- */
-    .reviews {
-      background: var(--bg-secondary);
-    }
+    /* reviews */
+    .reviews { background: var(--bg-secondary); }
     .review-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
       gap: 24px;
     }
-    @media (max-width: 900px) {
-      .review-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 900px) { .review-grid { grid-template-columns: 1fr; } }
     .review-card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 32px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .review-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
-    .review-stars {
-      color: #FFD700;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-    }
-    .review-card p {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--text-primary);
-    }
-    .review-person {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: auto;
-    }
-    .review-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #eaeaea;
-    }
-    .review-name {
-      font-size: 13.5px;
-      font-weight: 600;
-    }
-    .review-role {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 44px;
-    }
-    .carousel-dots span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-    .carousel-dots span.on {
-      background: var(--accent);
-      width: 20px;
-      border-radius: 4px;
-    }
+    .review-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .review-stars { color: #FFD700; font-size: 13px; letter-spacing: 1.5px; }
+    .review-card p { font-size: 14px; line-height: 1.6; color: var(--text-primary); }
+    .review-person { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+    .review-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #eaeaea; }
+    .review-name { font-size: 13px; font-weight: 600; }
+    .review-role { font-size: 11.5px; color: var(--text-secondary); }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 36px; }
+    .carousel-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+    .carousel-dots span.on { background: var(--accent); width: 20px; border-radius: 4px; }
 
-    /* ----- cta ----- */
+    /* team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
+    .team-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .team-card .avatar { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; background: #eaeaea; object-fit: cover; }
+    .team-card h3 { font-size: 18px; font-weight: 600; }
+    .team-card .role { font-size: 13px; color: var(--accent); font-weight: 500; }
+    .team-card .languages { font-size: 12px; color: var(--text-secondary); margin: 6px 0 12px; }
+    .team-card .book-stylist { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+    /* cta */
     .cta {
       background: var(--dark);
       color: #fff;
@@ -777,180 +507,168 @@
       top: -40%;
       left: 50%;
       transform: translateX(-50%);
-      width: 700px;
-      height: 700px;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,162,39,0.14), transparent 65%);
+      background: radial-gradient(circle, rgba(184,134,11,0.12), transparent 65%);
     }
-    .cta-inner {
-      position: relative;
-      z-index: 1;
-    }
-    .cta h2 {
-      font-size: clamp(30px,4vw,46px);
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 18px;
-    }
-    .cta p {
-      color: rgba(255,255,255,0.65);
-      font-size: 16px;
-      margin-bottom: 36px;
-    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta h2 { font-size: clamp(28px,3.8vw,42px); font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+    .cta p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 32px; }
 
-    /* ----- footer (black) ----- */
+    /* faq */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 40px;
+    }
+    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .faq-item h4 { font-size: 15px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-item p { font-size: 14px; color: var(--text-secondary); margin-top: 8px; display: none; }
+    .faq-item.open p { display: block; }
+
+    /* contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-info h3 { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+    .contact-info p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+    .contact-info .addr { margin: 16px 0; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      margin-bottom: 14px;
+      font-family: inherit;
+      background: #fff;
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form .btn { background: var(--dark); color: #fff; border: none; width: auto; padding: 14px 36px; }
+
+    /* footer */
     footer {
       background: #0b0b0b;
       color: rgba(255,255,255,0.7);
-      padding: 80px 0 32px;
+      padding: 70px 0 28px;
     }
     .footer-top {
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 56px;
+      gap: 50px;
+      margin-bottom: 48px;
     }
-    @media (max-width: 900px) {
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 36px;
-      }
-    }
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-    }
-    .footer-brand .brand-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .footer-brand .logo-img {
-      height: 55px;
-      width: auto;
-    }
-    .footer-brand .brand-name {
-      font-weight: 600;
-      font-size: 18px;
-      color: #fff;
-      letter-spacing: 0.5px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.5);
-      margin-top: 12px;
-    }
-    footer h5 {
-      color: #fff;
-      font-size: 13.5px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-    footer ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    footer ul li {
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.55);
-    }
-    footer ul li a:hover {
-      color: var(--accent);
-    }
-    .footer-socials {
-      display: flex;
-      gap: 16px;
-      margin-top: 8px;
-    }
-    .footer-socials a {
-      display: inline-block;
-      transition: opacity 0.2s;
-    }
-    .footer-socials a:hover {
-      opacity: 0.7;
-    }
-    .footer-socials img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
-    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; } }
+    .footer-brand .logo-img { height: 48px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.5); }
+    footer h5 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 14px; letter-spacing: 0.5px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer ul li { font-size: 13px; color: rgba(255,255,255,0.55); }
+    footer ul li a:hover { color: var(--accent-light); }
+    .footer-socials { display: flex; gap: 14px; margin-top: 10px; }
+    .footer-socials a { display: inline-block; transition: opacity 0.2s; }
+    .footer-socials a:hover { opacity: 0.7; }
+    .footer-socials img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.4);
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
     .fade-line {
       height: 2px;
       width: 100%;
-      background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
-      opacity: 0.3;
+      background: linear-gradient(90deg, transparent 0%, var(--accent-light) 50%, transparent 100%);
+      opacity: 0.2;
     }
-    .fade-line.dark {
-      opacity: 0.15;
+
+    /* chat */
+    .chat-bubble {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      background: var(--accent-light);
+      color: #1A1A1A;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform 0.25s;
+      border: none;
     }
-    .view-all-wrap {
-      text-align: center;
-      margin-top: 40px;
-    }
+    .chat-bubble:hover { transform: scale(1.06); }
+    @media (max-width: 768px) { .chat-bubble { width: 50px; height: 50px; font-size: 12px; bottom: 18px; right: 18px; } }
   </style>
 </head>
 <body>
 
 <div class="nav-shell">
   <nav id="navbar">
-    <img class="logo-img" src="https://i.ibb.co/WN5gNFXy/28957ba7-fb34-4753-8411-7ab4354e51a6.png" alt="Clayton Trimz Logo" />
-    <span style="font-weight:700; font-size:17px; letter-spacing:0.5px; color:var(--dark);">Clayton Trimz</span>
+    <img class="logo-img" src="logo.png" alt="Orient Style Logo" />
+    <span style="font-weight:700; font-size:17px; letter-spacing:0.3px; color:var(--dark);">Orient Style</span>
     <ul class="nav-links">
       <li><a href="#" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#visit">Visit Us</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="tel:+447846184199" class="nav-cta">Call Now</a>
+    <div class="lang-toggle">
+      <span class="active-lang">DE</span>
+      <span>EN</span>
+    </div>
+    <a href="#contact" class="nav-cta">Book Appointment</a>
   </nav>
 </div>
 
-<!-- HERO (right-aligned, text pushed further down) -->
+<!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <span class="eyebrow">PREMIUM GROOMING · BRADFORD</span>
-    <h1>Precision Cuts.<br>Expert Fades.<br><em>Confidence Starts Here.</em></h1>
-    <p>Experience one of Bradford's top-rated barbershops where every haircut is crafted with precision, attention to detail, and genuine customer care. Proudly rated 5.0 stars.</p>
+    <span class="eyebrow">★★★★★ Moabit's Best Hair Salon</span>
+    <h1>Your Premium<br />Hair Salon in<br /><em>Berlin Moabit</em></h1>
+    <p>Perfect haircuts, modern styling and first-class service – no appointment needed.</p>
     <div class="btn-row">
-      <a href="#visit" class="btn btn-primary">Book Appointment</a>
-      <a href="tel:+447846184199" class="btn btn-outline">Call Now</a>
+      <a href="#contact" class="btn btn-primary">Book Appointment</a>
+      <a href="tel:+4917670362098" class="btn btn-outline">Call Us</a>
     </div>
   </div>
   <div class="rating-float">
-    <span class="rating-score">5.0</span>
+    <span class="rating-score">4.6</span>
     <div>
       <div class="rating-stars">★★★★★</div>
-      <div class="rating-sub">18+ Google Reviews</div>
+      <div class="rating-sub">54 Google Reviews</div>
     </div>
   </div>
-  <div class="scroll-cue"><span>SCROLL</span><div class="line"></div></div>
 </section>
 
-<!-- TRUST BAR / STATS -->
+<!-- STATS -->
 <section>
   <div class="wrap">
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num"><span style="color:#121212;">5.0</span><span style="color:#FFD700;">★</span></div><div class="stat-label">Google Rating</div></div>
-      <div class="stat-card"><div class="stat-num">600+</div><div class="stat-label">Happy Customers</div></div>
-      <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Professional Services</div></div>
-      <div class="stat-card"><div class="stat-num">7+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-card"><div class="stat-num">4.6<span style="color:#FFD700;">★</span></div><div class="stat-label">Google Rating</div></div>
+      <div class="stat-card"><div class="stat-num">10k+</div><div class="stat-label">Happy Clients</div></div>
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Expert Stylists</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Satisfaction</div></div>
     </div>
   </div>
 </section>
@@ -961,53 +679,79 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow-line">What We Offer</div>
-      <h2>Services, perfected</h2>
-      <p>Every service built around precision, consistency, and a genuinely relaxed experience.</p>
+      <div class="eyebrow-line">Discover</div>
+      <h2>Our Services</h2>
+      <p>Premium hair salon and barber services for the whole family in Berlin Moabit</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><div class="service-body"><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><div class="service-body"><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><div class="service-body"><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><div class="service-body"><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><div class="service-body"><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><div class="service-body"><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><div class="service-body"><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><div class="service-body"><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><div class="service-body"><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div></div>
-      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><div class="service-body"><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div></div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="serviceTabs">
+      <button class="tab-btn active-tab" data-tab="men">Men</button>
+      <button class="tab-btn" data-tab="women">Women</button>
+      <button class="tab-btn" data-tab="kids">Children</button>
+    </div>
+
+    <div class="services-grid" id="serviceGrid">
+      <!-- MEN -->
+      <div class="service-card" data-category="men"><div class="service-icon">✂️</div><h3>Men's Haircut</h3><div class="price">15€</div><p>Precision cut for the modern man</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="men"><div class="service-icon">✂️</div><h3>Haircut & Wash</h3><div class="price">18€</div><p>Fresh cut with a relaxing wash</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="men"><div class="service-icon">🧔</div><h3>Beard Trim</h3><div class="price">12€</div><p>Trim, shape and grooming</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="men"><div class="service-icon">✂️</div><h3>Haircut & Beard</h3><div class="price">27€</div><p>Complete men's grooming package</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="men"><div class="service-icon">🔥</div><h3>Hot Wax</h3><div class="price">7€</div><p>Professional waxing service</p><a href="#" class="book-link">Book →</a></div>
+
+      <!-- WOMEN -->
+      <div class="service-card" data-category="women"><div class="service-icon">💇‍♀️</div><h3>Women's Cut</h3><div class="price">ab 25€</div><p>Elegant style and perfect shape</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">💇‍♀️</div><h3>Wash & Cut</h3><div class="price">ab 30€</div><p>Wash, cut and style</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">💨</div><h3>Wash & Blow-dry</h3><div class="price">ab 25€</div><p>Professional blow-dry finish</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">🎨</div><h3>Root Color</h3><div class="price">ab 30€</div><p>Perfect root touch-up</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">🎨</div><h3>Full Hair Color / Toner</h3><div class="price">ab 40€</div><p>Vibrant all-over color</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">✨</div><h3>Highlights</h3><div class="price">ab 50€</div><p>Custom highlights and effects</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">💆</div><h3>Hair Treatment</h3><div class="price">10€</div><p>Deep conditioning treatment</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">🌀</div><h3>Perm</h3><div class="price">ab 50€</div><p>Long-lasting curls and waves</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">👁️</div><h3>Eyebrow Tint</h3><div class="price">10€</div><p>Defined, natural brows</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">👁️</div><h3>Eyebrow Shaping</h3><div class="price">7€</div><p>Traditional thread shaping</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="women"><div class="service-icon">👁️</div><h3>Eyelash Tint</h3><div class="price">7€</div><p>Enhance your lashes</p><a href="#" class="book-link">Book →</a></div>
+
+      <!-- KIDS -->
+      <div class="service-card" data-category="kids"><div class="service-icon">🧒</div><h3>Kids' Haircut</h3><div class="price">12€</div><p>Friendly, gentle and professional</p><a href="#" class="book-link">Book →</a></div>
+      <div class="service-card" data-category="kids"><div class="service-icon">🧒</div><h3>Kids' Haircut & Wash</h3><div class="price">15€</div><p>Haircut with a gentle wash</p><a href="#" class="book-link">Book →</a></div>
     </div>
     <div class="view-all-wrap">
-      <a href="services.html" class="view-all-btn" target="_blank">View All Services</a>
+      <a href="#" class="view-all-btn">View All Services & Prices →</a>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US / FEATURE -->
+<!-- WHY ORIENT STYLE -->
 <section>
   <div class="wrap">
-    <div class="why">
-      <div class="ph"></div>
+    <div class="why-grid">
+      <div class="why-img"></div>
       <div>
-        <div class="why-eyebrow">Why Clayton Trimz</div>
-        <h2>Craft, consistency, and care in every cut</h2>
-        <div class="why-feature"><div class="icon">01</div><div><h4>Experienced Barbers</h4><p>7+ years of dedicated experience, masters of the fade.</p></div></div>
-        <div class="why-feature"><div class="icon">02</div><div><h4>Attention to Detail</h4><p>Every cut, every line, every finish — perfected.</p></div></div>
-        <div class="why-feature"><div class="icon">03</div><div><h4>Friendly Atmosphere</h4><p>A refined, welcoming space built for comfort.</p></div></div>
-        <div class="why-feature"><div class="icon">04</div><div><h4>Modern Techniques</h4><p>Contemporary styling with classic barbering roots.</p></div></div>
+        <div class="why-eyebrow">Orient Style Salon</div>
+        <h2>★★★★★ 4.6 auf Google<br />Ihr Friseur in Moabit</h2>
+        <p style="color:var(--text-secondary); margin-bottom:24px; font-size:15px;">Seit Jahren vertrauen unsere Kunden uns für hochwertige Haarschnitte, Bartpflege und Premium-Styling.</p>
+        <div class="why-feature"><div class="icon">01</div><div><h4>Walk-ins Welcome</h4><p>No appointment needed</p></div></div>
+        <div class="why-feature"><div class="icon">02</div><div><h4>Friendly Team</h4><p>Warm and professional</p></div></div>
+        <div class="why-feature"><div class="icon">03</div><div><h4>Professionals</h4><p>Expert stylists & barbers</p></div></div>
+        <div class="why-feature"><div class="icon">04</div><div><h4>Fair Prices</h4><p>Premium quality, fair cost</p></div></div>
+        <div class="why-feature"><div class="icon">05</div><div><h4>Fast Service</h4><p>We respect your time</p></div></div>
+        <div class="why-feature"><div class="icon">06</div><div><h4>Family Friendly</h4><p>For men, women & kids</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT (white bg, text left, image right) -->
+<!-- ABOUT -->
 <section class="about-white" id="about">
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <div class="eyebrow-line">Our Story</div>
-        <h2>More Than Just A Haircut</h2>
-        <p>Clayton Trimz has built an outstanding reputation in Bradford by delivering high-quality haircuts, clean fades, professional beard grooming, and exceptional customer service. Every client is treated with care, ensuring they leave looking sharp and feeling confident. Proudly serving the community from Paradise Shopping Centre.</p>
+        <div class="eyebrow-line">About Us</div>
+        <h2>Your feel-good oasis in Berlin Moabit</h2>
+        <p>In the heart of Berlin Moabit, we have been offering first-class hair salon and barber services for the whole family for years. Our experienced team combines traditional craftsmanship with modern trends.</p>
+        <p style="margin-top:12px;">Our mission is to provide every customer with the best possible experience – from children to adults, with or without an appointment.</p>
+        <p style="margin-top:12px; font-weight:600;">Orient Style Hair Salon Moabit<br />Turmstraße 21, 10559 Berlin</p>
       </div>
       <div class="about-img"></div>
     </div>
@@ -1018,58 +762,157 @@
 <section id="gallery">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow-line">The Craft</div>
-      <h2>Gallery</h2>
+      <div class="eyebrow-line">Our Work</div>
+      <h2>Every cut is a work of art</h2>
     </div>
-    <div class="gallery-grid">
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlxZZSvQIdUURuk6k3QdW9Mb6hXrg59xDnBXH4rse99PF4uvFhlRenpPZF72fAbqSjVpz1Hdt91s37eoTj9UqQ2PKUhPVqZWg8v8ml1eGvMsCI8DmlZ3-uoqOV-5bHP2ek5_VU4=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl8JPhk9OPH83Zklp_XUaXHCkxk_O764qg6dR2100pnHnPTI2cVV8ti8jzTNbrvUDN490tcHM85mXvE3zw--JR2_ojiS7CArzZ0GQ5XDxqUIdGv7k7Eiu9PAZ8b9e6624aJ9Iqz=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm1CCGNk1DeE4w8Qm_uuwXJIlxWgclaarvst70H9SP3VtcTwsauVNFiSRlHYHliKOwjS4-ZRXDPPO_CJ5lJgIVHl3Xuy2ERg_uvJUHqEzJbHVgZYOFTP8JRdNII7P4_gqBcqEV3hA=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmYrNidkPkVar_uzyCvQjuEDgMVfO7E5OEiLKwRxfFQm83yw9RFlmb3riqxhbjkIKmAV3T-tbL68fasriNywwF3XOMsOfyvLoirHMLZDMYe97i7Nq37XjqYZjP0a7doZomhzgx6=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk5rHHbapM_n7TVNp8pqzxfJ9r5ag2de7X_LeeDwWMDlh3SOLDduosBCM8rm8pYeEDbn-ig6DHIxee_u6GimHFwwuAGX0KDsvok5b4JZHjxuaro1P6Ym-T4dTE9oIUI1Kl-l6Na=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlZHoGH1xWeAyj9yeUjgYERvdR-kL9ycPU2QeAtGhzTh1BaQxbsGA8-uD04fAZLLPgvlSdLfG8XevjMmdXxkVHUoOzRSh5m1iEYuS1S23Iomv4iueJCcc1sfhVD6QYH2miJG8ms=s1360-w1360-h1020-rw');"></div>
-      <div class="ph" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnT4XLvUcKXoJC060c0xF_k1EJVraPkjuFrnxzrzwvGyXT7VFCvvVNunzZZ00ANd2So7ZrKFIxZbo6P82o-khZsrxHuMYbPlP4k5j8D9_TcrtYJjHDeneesf0RhIWgR3Ox1m6u-=s1360-w1360-h1020-rw');"></div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Images 1-9 -->
+      <div class="ph" style="background-image:url('1.png');"></div>
+      <div class="ph" style="background-image:url('2.png');"></div>
+      <div class="ph" style="background-image:url('3.png');"></div>
+      <div class="ph" style="background-image:url('4.png');"></div>
+      <div class="ph" style="background-image:url('5.png');"></div>
+      <div class="ph" style="background-image:url('6.png');"></div>
+      <div class="ph" style="background-image:url('7.png');"></div>
+      <div class="ph" style="background-image:url('8.png');"></div>
+      <div class="ph" style="background-image:url('9.png');"></div>
     </div>
     <div class="view-all-wrap">
-      <a href="gallery.html" class="view-all-btn" target="_blank">View All Photos</a>
+      <a href="#" class="view-all-btn">Show All 65 Photos</a>
     </div>
+    <p style="text-align:center; font-size:13px; color:var(--text-secondary); margin-top:12px;">Showing 9 of 65 photos</p>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews">
+<section class="reviews" id="reviews">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow-line">Testimonials</div>
-      <h2>Loved by Bradford</h2>
+      <div class="eyebrow-line">What Our Customers Say</div>
+      <h2>54 real reviews on Google</h2>
+      <p>★★★★★ 4.6 · 54 Google Reviews</p>
     </div>
     <div class="review-grid">
       <div class="review-card">
-        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mohammed" /><div><div class="review-name">Mohammed Junaid Awan</div><div class="review-role">Local Guide · 31 reviews</div></div></div>
+        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Noah" /><div><div class="review-name">Noah Claus</div><div class="review-role">Men's Haircut</div></div></div>
         <div class="review-stars">★★★★★</div>
-        <p>"Really good place for hair cut. Fantastic job, both boys very happy and friendly service. Highly recommended."</p>
+        <p>"Very professional - and also ultra friendly!"</p>
+        <span style="font-size:11px; color:var(--text-secondary);">4 months ago · Google</span>
       </div>
       <div class="review-card">
-        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Subhan" /><div><div class="review-name">Subhan Hussain</div><div class="review-role">Regular Client</div></div></div>
+        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Marcus" /><div><div class="review-name">Marcus B.</div><div class="review-role">Men's Haircut</div></div></div>
         <div class="review-stars">★★★★★</div>
-        <p>"Been coming here since it opened. I have not been let down by the price and quality. Zaid is a professional barber who caters to your needs. Excellent parking right outside."</p>
+        <p>"Everything was fine, as always, but the music was way too loud!"</p>
+        <span style="font-size:11px; color:var(--text-secondary);">5 months ago · Google</span>
       </div>
       <div class="review-card">
-        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Hamid" /><div><div class="review-name">Hamid Ilyas</div><div class="review-role">Local Guide · 79 reviews</div></div></div>
+        <div class="review-person"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Lukas" /><div><div class="review-name">Lukas</div><div class="review-role">Perm</div></div></div>
         <div class="review-stars">★★★★★</div>
-        <p>"I am his regular customer since 2017. I travel 9 miles passing 20 shops just to come here. He is professional and won't disappoint you. Excellent cut and customer service."</p>
+        <p>"I've been there four times for a perm. I'm satisfied every time. The service is friendly and the perm turns out well."</p>
+        <span style="font-size:11px; color:var(--text-secondary);">5 months ago · Google</span>
       </div>
     </div>
     <div class="carousel-dots"><span class="on"></span><span></span><span></span></div>
   </div>
 </section>
 
+<!-- TEAM -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line">The Team</div>
+      <h2>Get to know our professional team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img class="avatar" src="https://randomuser.me/api/portraits/men/41.jpg" alt="Noah" />
+        <h3>Noah Claus</h3>
+        <div class="role">Master Barber · Herrenhaarschnitt</div>
+        <div class="languages">🌐 Deutsch · Englisch · Französisch</div>
+        <a href="#" class="book-stylist">Book Stylist →</a>
+      </div>
+      <div class="team-card">
+        <img class="avatar" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Muhammad" />
+        <h3>Muhammad Kashif</h3>
+        <div class="role">Top Stylist · Dauerwelle & Farbe</div>
+        <div class="languages">🌐 Deutsch · Urdu · Englisch</div>
+        <a href="#" class="book-stylist">Book Stylist →</a>
+      </div>
+      <div class="team-card">
+        <img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Karoline" />
+        <h3>Karoline Mathis</h3>
+        <div class="role">Barber · Bartpflege & Kinder</div>
+        <div class="languages">🌐 Deutsch · Englisch · Spanisch</div>
+        <a href="#" class="book-stylist">Book Stylist →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg-secondary);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item open"><h4>Do I need an appointment? <span>−</span></h4><p>No! Walk-ins are always welcome. You can also book online to avoid waiting times.</p></div>
+      <div class="faq-item"><h4>Do you do kids' haircuts? <span>+</span></h4><p>Yes, we offer professional and gentle haircuts for children starting at 12€.</p></div>
+      <div class="faq-item"><h4>What services do you offer? <span>+</span></h4><p>We offer men's & women's haircuts, beard trimming, coloring, highlights, perms, waxing, and more.</p></div>
+      <div class="faq-item"><h4>How long does a haircut take? <span>+</span></h4><p>Most haircuts take between 20-45 minutes depending on the service.</p></div>
+      <div class="faq-item"><h4>What payment methods do you accept? <span>+</span></h4><p>We accept cash, card, and contactless payments.</p></div>
+      <div class="faq-item"><h4>What are your opening hours? <span>+</span></h4><p>Mon–Sat: 09:00 AM–08:00 PM. Sunday closed.</p></div>
+      <div class="faq-item"><h4>Where is the salon located? <span>+</span></h4><p>Turmstraße 21, 10559 Berlin Moabit.</p></div>
+      <div class="faq-item"><h4>Do you offer hair coloring? <span>+</span></h4><p>Yes, we offer root color, full color, highlights, balayage and more.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <p style="font-size:14px; color:var(--text-secondary);">Still have questions?</p>
+      <a href="#" class="btn btn-dark" style="margin-top:12px;">Message us on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="cta" id="visit">
+<section class="cta" id="contact">
   <div class="wrap cta-inner">
-    <h2>Ready For Your Next Fresh Cut?</h2>
-    <p>Visit us at Paradise Shopping Centre. Walk-ins welcome or call to book.</p>
-    <a href="tel:+447846184199" class="btn btn-gold">Call +44 7846 184199</a>
+    <h2>Book an Appointment</h2>
+    <p>Choose your service and book easily online</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="#" class="btn btn-gold">Book via WhatsApp</a>
+      <a href="tel:+4917670362098" class="btn btn-outline">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & DIRECTIONS -->
+<section style="background:var(--bg-secondary);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line">Contact & Directions</div>
+      <h2>We look forward to your visit in Berlin Moabit</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>📍 Address</h3>
+        <p class="addr">Turmstraße 21<br />10559 Berlin Moabit</p>
+        <p><a href="#" style="color:var(--accent); font-weight:600;">Get Directions →</a></p>
+        <h3 style="margin-top:24px;">📞 Phone</h3>
+        <p><a href="tel:+4917670362098" style="font-weight:600;">+49 176 70362098</a></p>
+        <h3 style="margin-top:24px;">🕐 Opening Hours</h3>
+        <p>Mon–Sat: 09:00 AM–08:00 PM<br />Sun: Closed</p>
+        <h3 style="margin-top:24px;">💬 WhatsApp</h3>
+        <p><a href="#" style="font-weight:600; color:var(--accent);">Chat with us →</a></p>
+      </div>
+      <div>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your Message"></textarea>
+          <button class="btn" style="background:var(--dark); color:#fff; border:none; padding:14px 36px;">Send</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1078,44 +921,78 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="brand-row">
-          <img class="logo-img" src="https://i.ibb.co/WN5gNFXy/28957ba7-fb34-4753-8411-7ab4354e51a6.png" alt="Clayton Trimz Logo" />
-          <span class="brand-name">Clayton Trimz</span>
-        </div>
-        <p>Premium modern barbering in the heart of Bradford, UK.</p>
-        <p style="margin-top:12px; font-size:13px; color:rgba(255,255,255,0.4);">⭐ 5.0 · 18+ reviews</p>
+        <img class="logo-img" src="logo.png" alt="Orient Style Logo" />
+        <span style="font-weight:600; font-size:16px; color:#fff; display:block; margin-bottom:6px;">Orient Style</span>
+        <p>Your premium hair salon in Berlin Moabit.</p>
+        <p style="margin-top:8px; font-size:13px; color:rgba(255,255,255,0.4);">★★★★★ 4.6 Google</p>
       </div>
       <div>
-        <h5>Navigate</h5>
-        <ul><li><a href="#">Home</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#about">About</a></li><li><a href="#visit">Visit Us</a></li></ul>
+        <h5>Quick Links</h5>
+        <ul><li><a href="#">Services</a></li><li><a href="#about">About Us</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
       </div>
       <div>
-        <h5>Hours</h5>
-        <ul><li>Monday: 10am–7pm</li><li>Tuesday: 10am–7pm</li><li>Wednesday: 10am–7pm</li><li>Thursday: 10am–7pm</li><li>Friday: 10am–7pm</li><li>Saturday: 10am–7pm</li><li>Sunday: 10am–7pm</li></ul>
+        <h5>Opening Hours</h5>
+        <ul><li>Mon–Sat: 09:00 AM–08:00 PM</li><li>Sun: Closed</li></ul>
       </div>
       <div>
-        <h5>Contact</h5>
-        <ul><li><a href="tel:+447846184199">+44 7846 184199</a></li><li>175 Pasture Ln, Clayton</li><li>Bradford BD7 2SQ</li><li>Paradise Shopping Centre</li></ul>
+        <h5>Kontakt</h5>
+        <ul><li>Turmstraße 21, 10559 Berlin</li><li><a href="tel:+4917670362098">+49 176 70362098</a></li><li><a href="#">WhatsApp</a></li></ul>
         <div class="footer-socials">
-          <a href="#" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/%3E%3C/svg%3E" alt="Instagram" /></a>
-          <a href="#" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook" /></a>
-          <a href="https://wa.me/447846184199" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" /></a>
+          <a href="#"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/%3E%3C/svg%3E" alt="Instagram" /></a>
+          <a href="#"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook" /></a>
+          <a href="#"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" /></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Clayton Trimz. All rights reserved.</span>
-      <span>Bradford · Paradise Shopping Centre</span>
+      <span>© 2026 Orient Style Friseur Steglitz. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Imprint</a> · <a href="#">Terms</a></span>
     </div>
   </div>
 </footer>
 
+<!-- Chat Bubble -->
+<button class="chat-bubble" onclick="alert('Chat with Orient Style AI Assistant')">💬</button>
+
 <script>
+  // Nav shrink
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) nav.classList.add('shrink');
     else nav.classList.remove('shrink');
   });
+
+  // Service Tabs
+  const tabs = document.querySelectorAll('.tab-btn');
+  const services = document.querySelectorAll('.service-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active-tab'));
+      tab.classList.add('active-tab');
+      const category = tab.dataset.tab;
+      services.forEach(s => {
+        if (s.dataset.category === category) {
+          s.classList.remove('hidden-service');
+        } else {
+          s.classList.add('hidden-service');
+        }
+      });
+    });
+  });
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item h4').forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.closest('.faq-item');
+      parent.classList.toggle('open');
+      const span = item.querySelector('span');
+      span.textContent = parent.classList.contains('open') ? '−' : '+';
+    });
+  });
+
+  // Ensure all services visible on load (Men default)
+  document.querySelector('[data-tab="men"]').click();
 </script>
 </body>
 </html>
