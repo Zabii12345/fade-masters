@@ -59,34 +59,6 @@
       }
     }
 
-    /* ----- placeholder imagery (css-crafted, no external) ----- */
-    .ph {
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(120% 140% at 20% 15%, rgba(255,255,255,0.06), transparent 55%),
-                  linear-gradient(155deg, #2b2620 0%, #1a1712 45%, #0d0c0a 100%);
-      border-radius: var(--radius-md);
-    }
-    .ph::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 8px);
-      mix-blend-mode: overlay;
-    }
-    .ph-gold::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(90% 70% at 80% 0%, rgba(201,162,39,0.18), transparent 60%);
-    }
-    .ph-tone2 {
-      background: linear-gradient(155deg, #35302a 0%, #201c17 50%, #100e0b 100%);
-    }
-    .ph-tone3 {
-      background: linear-gradient(155deg, #262019 0%, #17140f 50%, #0b0a08 100%);
-    }
-
     /* ----- nav ----- */
     .nav-shell {
       position: fixed;
@@ -102,7 +74,7 @@
       display: flex;
       align-items: center;
       gap: 44px;
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.80);
       backdrop-filter: blur(16px) saturate(160%);
       -webkit-backdrop-filter: blur(16px) saturate(160%);
       border: 1px solid rgba(255,255,255,0.5);
@@ -115,11 +87,10 @@
       padding: 8px 10px 8px 22px;
       gap: 32px;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 1.6px;
-      color: var(--dark);
+    .logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
     .nav-links {
       display: flex;
@@ -180,17 +151,20 @@
       justify-content: center;
       color: #fff;
       text-align: center;
+      padding-top: 80px; /* space below navbar */
     }
-    .hero .ph {
+    .hero-bg {
       position: absolute;
       inset: 0;
+      background: url('https://i.ibb.co/v4scHhNk/ff27c887-83f6-4992-8dd7-0376a9f9e294.png') center center / cover no-repeat;
       border-radius: 0;
+      z-index: 0;
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.8) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.8) 100%);
       z-index: 1;
     }
     .hero-inner {
@@ -214,10 +188,10 @@
       text-transform: uppercase;
     }
     .hero h1 {
-      font-size: clamp(40px, 6vw, 72px);
+      font-size: clamp(32px, 4.5vw, 56px); /* smaller than before */
       font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -1.5px;
+      line-height: 1.1;
+      letter-spacing: -1.2px;
       margin-bottom: 24px;
     }
     .hero h1 em {
@@ -320,6 +294,39 @@
       0% { top: -100%; }
       60% { top: 100%; }
       100% { top: 100%; }
+    }
+    .rating-float {
+      position: absolute;
+      left: 5%;
+      bottom: 56px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-primary);
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px -14px rgba(0,0,0,0.35);
+    }
+    @media (max-width: 900px) {
+      .rating-float {
+        display: none;
+      }
+    }
+    .rating-score {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .rating-stars {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .rating-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 2px;
     }
 
     /* ----- sections ----- */
@@ -429,9 +436,12 @@
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
     }
-    .service-card .ph {
-      height: 160px;
+    .service-card .service-img {
+      height: 180px;
       border-radius: var(--radius-md);
+      object-fit: cover;
+      width: 100%;
+      background: #eaeaea;
     }
     .service-card h3 {
       font-size: 19px;
@@ -472,6 +482,10 @@
     .why .ph {
       height: 480px;
       border-radius: var(--radius-lg);
+      background: #eaeaea;
+      background-image: url('https://i.ibb.co/v4scHhNk/ff27c887-83f6-4992-8dd7-0376a9f9e294.png');
+      background-size: cover;
+      background-position: center;
     }
     .why-eyebrow {
       font-size: 12.5px;
@@ -550,7 +564,7 @@
       font-family: Georgia, serif;
     }
 
-    /* ----- gallery masonry ----- */
+    /* ----- gallery masonry (placeholder) ----- */
     .gallery-grid {
       columns: 4 220px;
       column-gap: 20px;
@@ -566,18 +580,19 @@
       border-radius: var(--radius-md);
       break-inside: avoid;
       transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+      background: #eaeaea;
     }
     .gallery-grid .ph:hover {
       transform: scale(1.02);
     }
-    .gallery-grid .ph:nth-child(1) { height: 280px; }
-    .gallery-grid .ph:nth-child(2) { height: 380px; }
-    .gallery-grid .ph:nth-child(3) { height: 220px; }
-    .gallery-grid .ph:nth-child(4) { height: 340px; }
-    .gallery-grid .ph:nth-child(5) { height: 260px; }
-    .gallery-grid .ph:nth-child(6) { height: 320px; }
-    .gallery-grid .ph:nth-child(7) { height: 230px; }
-    .gallery-grid .ph:nth-child(8) { height: 300px; }
+    .gallery-grid .ph:nth-child(1) { height: 280px; background-image: url('https://i.ibb.co/v4scHhNk/ff27c887-83f6-4992-8dd7-0376a9f9e294.png'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(2) { height: 380px; background-image: url('https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE='); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(3) { height: 220px; background-image: url('https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(4) { height: 340px; background-image: url('https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(5) { height: 260px; background-image: url('https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(6) { height: 320px; background-image: url('https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(7) { height: 230px; background-image: url('https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg'); background-size: cover; background-position: center; }
+    .gallery-grid .ph:nth-child(8) { height: 300px; background-image: url('https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw='); background-size: cover; background-position: center; }
 
     /* ----- reviews ----- */
     .reviews {
@@ -708,11 +723,9 @@
         gap: 36px;
       }
     }
-    .footer-brand .logo {
-      color: #fff;
-      font-size: 16px;
+    .footer-brand .logo-img {
+      height: 40px;
       margin-bottom: 14px;
-      display: block;
     }
     .footer-brand p {
       font-size: 14px;
@@ -759,46 +772,13 @@
     .fade-line.dark {
       opacity: 0.15;
     }
-    .rating-float {
-      position: absolute;
-      left: 5%;
-      bottom: 56px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(255,255,255,0.95);
-      color: var(--text-primary);
-      padding: 14px 22px;
-      border-radius: var(--radius-md);
-      box-shadow: 0 20px 50px -14px rgba(0,0,0,0.35);
-    }
-    @media (max-width: 900px) {
-      .rating-float {
-        display: none;
-      }
-    }
-    .rating-score {
-      font-size: 24px;
-      font-weight: 700;
-    }
-    .rating-stars {
-      color: var(--accent);
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-    .rating-sub {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
   </style>
 </head>
 <body>
 
 <div class="nav-shell">
   <nav id="navbar">
-    <span class="logo">FADE MASTERS</span>
+    <img class="logo-img" src="https://i.ibb.co/ZzVWMgxP/33cebad4-f8b4-4e62-b632-f61fb55a02f9.png" alt="Fade Masters Logo" />
     <ul class="nav-links">
       <li><a href="#" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -812,7 +792,7 @@
 
 <!-- HERO -->
 <section class="hero" style="padding:0;">
-  <div class="ph ph-gold"></div>
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <span class="eyebrow">PREMIUM GROOMING · BRADFORD</span>
     <h1>Precision Cuts.<br>Premium Fades.<br><em>Confidence Starts Here.</em></h1>
@@ -855,14 +835,16 @@
       <p>Every service built around precision, consistency, and a genuinely relaxed experience.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="ph"></div><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph ph-tone2"></div><h3>Taper Fade</h3><p>Classic taper with modern precision, tailored to you.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph ph-tone3"></div><h3>Beard Styling</h3><p>Luxury beard sculpting, hot towel finish &amp; shaping.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph"></div><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph ph-tone2"></div><h3>Kids Haircuts</h3><p>Gentle, friendly cuts for the next generation.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph ph-tone3"></div><h3>Hot Towel Finish</h3><p>Premium hot towel service to relax and refresh.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph"></div><h3>Hair Styling</h3><p>Professional styling for any occasion.</p><span class="service-arrow">Learn more →</span></div>
-      <div class="service-card"><div class="ph ph-tone2"></div><h3>Luxury Finish</h3><p>Complete grooming experience with premium products.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div>
     </div>
   </div>
 </section>
@@ -871,7 +853,7 @@
 <section>
   <div class="wrap">
     <div class="why">
-      <div class="ph ph-tone2"></div>
+      <div class="ph"></div>
       <div>
         <div class="why-eyebrow">Why Fade Masters</div>
         <h2>Craft, consistency, and care in every cut</h2>
@@ -903,13 +885,13 @@
     </div>
     <div class="gallery-grid">
       <div class="ph"></div>
-      <div class="ph ph-tone2"></div>
-      <div class="ph ph-tone3"></div>
       <div class="ph"></div>
-      <div class="ph ph-tone2"></div>
       <div class="ph"></div>
-      <div class="ph ph-tone3"></div>
-      <div class="ph ph-tone2"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
     </div>
   </div>
 </section>
@@ -944,7 +926,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="logo">FADE MASTERS</span>
+        <img class="logo-img" src="https://i.ibb.co/ZzVWMgxP/33cebad4-f8b4-4e62-b632-f61fb55a02f9.png" alt="Fade Masters Logo" />
         <p>Premium modern barbering in the heart of Bradford, UK.</p>
         <p style="margin-top:12px; font-size:13px; color:rgba(255,255,255,0.4);">⭐ 4.8 · 92+ reviews</p>
       </div>
