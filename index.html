@@ -166,6 +166,14 @@
       border-radius: 0;
       z-index: 0;
     }
+    /* Mobile hero background override */
+    @media (max-width: 900px) {
+      .hero-bg {
+        background-image: url('https://i.postimg.cc/7q1NHtQt/image.png');
+        background-position: center center;
+        background-size: cover;
+      }
+    }
     .hero::before {
       content: "";
       position: absolute;
