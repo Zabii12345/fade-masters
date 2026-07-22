@@ -61,10 +61,10 @@
       }
     }
 
-    /* ----- nav ----- */
+    /* ----- nav (compact on mobile) ----- */
     .nav-shell {
       position: fixed;
-      top: 24px;
+      top: 16px;
       left: 0;
       right: 0;
       display: flex;
@@ -89,6 +89,47 @@
       padding: 8px 10px 8px 22px;
       gap: 32px;
     }
+
+    /* Mobile nav: smaller, tighter */
+    @media (max-width: 900px) {
+      .nav-shell {
+        top: 12px;
+        padding: 0 12px;
+      }
+      nav {
+        padding: 6px 10px 6px 14px;
+        gap: 12px;
+        border-radius: 40px;
+        width: 100%;
+        max-width: 420px;
+        justify-content: space-between;
+      }
+      nav.shrink {
+        padding: 5px 8px 5px 12px;
+        gap: 8px;
+      }
+      .logo-img {
+        height: 34px;
+        width: 34px;
+        flex-shrink: 0;
+      }
+      nav span {
+        font-size: 13px !important;
+        font-weight: 700;
+        letter-spacing: 0px;
+        white-space: nowrap;
+      }
+      .nav-cta {
+        font-size: 11px;
+        padding: 6px 14px;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+      .nav-links {
+        display: none !important;
+      }
+    }
+
     .logo-img {
       height: 50px;
       width: 50px;
@@ -102,11 +143,6 @@
       display: flex;
       gap: 30px;
       list-style: none;
-    }
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
     }
     .nav-links a {
       font-size: 13.5px;
@@ -166,14 +202,43 @@
       border-radius: 0;
       z-index: 0;
     }
-    /* Mobile hero background override */
+    /* Mobile hero background override - full image fit */
     @media (max-width: 900px) {
+      .hero {
+        min-height: 100vh;
+        padding-top: 100px;
+      }
       .hero-bg {
         background-image: url('https://i.postimg.cc/7q1NHtQt/image.png');
         background-position: center center;
         background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .hero::before {
+        background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.30) 40%, rgba(0,0,0,0.75) 100%);
+      }
+      .hero-inner {
+        padding: 0 20px;
+        margin-top: 20px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+      .btn {
+        font-size: 13px;
+        padding: 12px 24px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        padding: 6px 14px;
+        margin-bottom: 18px;
       }
     }
+
     .hero::before {
       content: "";
       position: absolute;
@@ -194,14 +259,14 @@
       .hero {
         justify-content: center;
         text-align: center;
-        padding-top: 160px;
+        padding-top: 100px;
       }
       .hero-inner {
         max-width: 100%;
         padding: 0 24px;
         margin: 0 auto;
         text-align: center;
-        margin-top: 40px;
+        margin-top: 20px;
       }
     }
     .eyebrow {
@@ -238,7 +303,8 @@
     }
     @media (max-width: 900px) {
       .hero p {
-        margin: 0 auto 40px;
+        margin: 0 auto 28px;
+        font-size: 15px;
       }
     }
     .btn-row {
@@ -250,6 +316,7 @@
     @media (max-width: 900px) {
       .btn-row {
         justify-content: center;
+        gap: 12px;
       }
     }
     .btn {
@@ -263,6 +330,12 @@
       gap: 8px;
       border: none;
       cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .btn {
+        font-size: 13px;
+        padding: 12px 22px;
+      }
     }
     .btn-primary {
       background: #fff;
@@ -371,7 +444,7 @@
       margin-top: 2px;
     }
 
-    /* ----- sections ----- */
+    /* ----- sections (unchanged) ----- */
     section {
       padding: 100px 0;
     }
@@ -406,7 +479,6 @@
       line-height: 1.65;
     }
 
-    /* ----- stats / trust bar ----- */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4,1fr);
@@ -415,6 +487,16 @@
     @media (max-width: 900px) {
       .stats-grid {
         grid-template-columns: repeat(2,1fr);
+        gap: 14px;
+      }
+      .stat-card {
+        padding: 20px 16px;
+      }
+      .stat-num {
+        font-size: 26px;
+      }
+      .stat-label {
+        font-size: 12px;
       }
     }
     .stat-card {
@@ -445,7 +527,7 @@
       font-weight: 500;
     }
 
-    /* ----- services ----- */
+    /* Services, Why, About, Gallery, Reviews, CTA, Footer - unchanged from original */
     .services {
       background: var(--bg-secondary);
     }
@@ -462,6 +544,7 @@
     @media (max-width: 768px) {
       .services-grid {
         grid-template-columns: repeat(2,1fr);
+        gap: 14px;
       }
     }
     @media (max-width: 480px) {
@@ -529,7 +612,6 @@
       .service-card .service-body { padding: 14px 16px 18px; gap: 8px; }
       .service-card h3 { font-size: 16px; }
       .service-card p { font-size: 12.5px; line-height: 1.5; }
-      .services-grid { gap: 14px; }
     }
     .view-all-btn {
       display: inline-block;
@@ -547,7 +629,6 @@
       transform: translateY(-2px);
     }
 
-    /* ----- why / feature ----- */
     .why {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
@@ -564,7 +645,6 @@
       height: 480px;
       border-radius: var(--radius-lg);
       background: #eaeaea;
-      /* Updated image for Why Elite Studio section */
       background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWktciqSC5SxPrmy-_pFP_vhq7JX9VLxWfQcZLWj-3PYOPgK7oQbQu6HQvUV1xM056LfVX_ciJQPRMgMTaQJZ6pBe1tEk1omMjR8vF-IuVnn8LltyVYRY3TOi508j1jqo60K4OFgVfueXvGU=s1360-w1360-h1020-rw');
       background-size: cover;
       background-position: center;
@@ -613,7 +693,6 @@
       line-height: 1.55;
     }
 
-    /* ----- about (white bg, text left, image right) ----- */
     .about-white {
       background: var(--bg);
       color: var(--text-primary);
@@ -659,7 +738,6 @@
       line-height: 1.7;
     }
 
-    /* ----- gallery ----- */
     .gallery-grid {
       columns: 4 220px;
       column-gap: 20px;
@@ -700,7 +778,6 @@
       .gallery-grid { columns: 2 150px; column-gap: 14px; }
     }
 
-    /* ----- reviews ----- */
     .reviews {
       background: var(--bg-secondary);
     }
@@ -777,7 +854,6 @@
       border-radius: 4px;
     }
 
-    /* ----- cta ----- */
     .cta {
       background: var(--dark);
       color: #fff;
@@ -812,7 +888,6 @@
       margin-bottom: 36px;
     }
 
-    /* ----- footer (black) ----- */
     footer {
       background: #0b0b0b;
       color: rgba(255,255,255,0.7);
@@ -925,7 +1000,6 @@
 
 <div class="nav-shell">
   <nav id="navbar">
-    <!-- Updated logo with circular styling -->
     <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
     <span style="font-weight:700; font-size:17px; letter-spacing:0.5px; color:var(--dark);">Elite Studio Men's Salon</span>
     <ul class="nav-links">
@@ -939,7 +1013,7 @@
   </nav>
 </div>
 
-<!-- HERO (right-aligned) -->
+<!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-bg"></div>
   <div class="hero-inner">
@@ -1001,11 +1075,10 @@
   </div>
 </section>
 
-<!-- WHY CHOOSE US / FEATURE -->
+<!-- WHY CHOOSE US -->
 <section>
   <div class="wrap">
     <div class="why">
-      <!-- Updated image for Why Elite Studio section -->
       <div class="ph"></div>
       <div>
         <div class="why-eyebrow">Why Elite Studio Men's Salon</div>
@@ -1019,7 +1092,7 @@
   </div>
 </section>
 
-<!-- ABOUT (white bg, text left, image right) -->
+<!-- ABOUT -->
 <section class="about-white" id="about">
   <div class="wrap">
     <div class="about-grid">
@@ -1098,7 +1171,6 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="brand-row">
-          <!-- Updated logo in footer -->
           <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
           <span class="brand-name">Elite Studio Men's Salon</span>
         </div>
